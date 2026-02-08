@@ -1,0 +1,111 @@
+/* Estilos PDV - Unificados */
+.pdv-card {
+  @apply bg-card hover:bg-accent transition-colors duration-200 border border-border rounded-lg cursor-pointer;
+}
+
+.pdv-card:hover {
+  @apply shadow-md transform scale-[1.02];
+}
+
+.pdv-card:active {
+  @apply transform scale-95;
+}
+
+.pdv-numpad-btn {
+  @apply bg-card hover:bg-accent border border-border rounded-lg px-4 py-3 text-lg font-medium transition-all duration-200;
+}
+
+.pdv-numpad-btn:hover {
+  @apply bg-accent text-accent-foreground shadow-sm;
+}
+
+.pdv-numpad-btn:active {
+  @apply bg-muted text-muted-foreground transform scale-95;
+}
+
+.pdv-cart-item {
+  @apply flex items-center gap-3 p-3 bg-card border border-border rounded-lg hover:bg-accent transition-all duration-200;
+}
+
+.pdv-cart-item.animate-slide-in-right {
+  animation: slideInRight 0.2s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Tipografia de preços */
+.font-price {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Responsividade melhorada */
+@media (max-width: 768px) {
+  .pdv-grid-cols {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .pdv-numpad-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .pdv-cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pdv-grid-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .pdv-numpad-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .pdv-numpad-btn {
+    @apply px-2 py-2 text-base;
+  }
+}
+
+/* Estilos de status */
+.status-low {
+  @apply text-warning bg-warning/10 border-warning/20;
+}
+
+.status-out {
+  @apply text-destructive bg-destructive/10 border-destructive/20;
+}
+
+.status-ok {
+  @apply text-success bg-success/10 border-success/20;
+}
+
+/* Botões de ação PDV */
+.pdv-action-btn {
+  @apply bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-lg font-semibold transition-all duration-200 shadow-md;
+}
+
+.pdv-action-btn:disabled {
+  @apply opacity-50 cursor-not-allowed bg-muted text-muted-foreground;
+}
+
+/* Overlay de carregamento */
+.pdv-loading-overlay {
+  @apply fixed inset-0 bg-background/50 backdrop-blur-sm flex items-center justify-center z-50;
+}
+
+.pdv-loading-spinner {
+  @apply animate-spin h-8 w-8 border-2 border-primary border-t-transparent rounded-full;
+}

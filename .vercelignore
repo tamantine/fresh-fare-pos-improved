@@ -1,0 +1,11 @@
+node_modules
+.git
+.vercel
+dist
+src/python
+*.pyc
+__pycache__
+venv
+.env
+.env.local
+.DS_Store

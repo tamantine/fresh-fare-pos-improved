@@ -1,0 +1,6 @@
+google-generativeai
+supabase
+python-dotenv
+colorama
+requests
+websockets>=13.0
